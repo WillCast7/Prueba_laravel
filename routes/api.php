@@ -19,6 +19,12 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//127.0.0.1:8000/api/productos
 route::get('/productos',        [ProductosController    ::class, 'getAllProducts']);
+
+//127.0.0.1:8000/api/producto/#  hay 5 productos
 route::get('/producto/{id}',    [ProductosController    ::class, 'getProduct']);
+
+//127.0.0.1:8000/api/login
 route::post('/login',           [AuthController         ::class, 'login']);
